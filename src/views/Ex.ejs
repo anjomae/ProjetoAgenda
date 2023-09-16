@@ -1,0 +1,29 @@
+<!--importação de html para dentro de outro-->
+<%- include('includes/Header')%>
+<body>
+
+  <section class="container">
+    <h1>
+
+      <!-- Não executa tags HTML -->
+      <!-- <%= titulo %></br> -->
+      <!-- Executa tags HTML -->
+      <%- titulo %>
+      <!-- usando o EJS para colocar javascript construindo a pagina Obs.: precisa abrir e fechar as tans <% %> em todas as linhas-->
+      <!-- <% numeros.forEach(num => { %>
+      <%= num %><br>
+      <% });%> -->
+
+    </h1>
+    <form action="/" method="post">
+      <label>Cliente</label>
+      <input type="hidden" name="_csrf" value="<%= csrfToken%>">
+      <input type="text" name="cliente">
+      <button>enviar</button>
+    </form>
+  </section>
+
+  <script src="./assets/js/bundle.js"></script>
+</body>
+
+</html>
