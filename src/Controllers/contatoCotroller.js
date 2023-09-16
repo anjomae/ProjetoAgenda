@@ -53,7 +53,7 @@ exports.edit = async (req, res) => {
             return;
         }
 
-        req.flash('success', 'contato editado com sucesso.');
+        req.flash('success', 'Contato editado com sucesso.');
         req.session.save(() => res.redirect(`/`));
         return;
 
@@ -69,7 +69,7 @@ exports.edit = async (req, res) => {
             const contato = await Contato.delete(req.params.id);
             if (!contato) return res.render('404');
     
-            req.flash('success', 'contato Deletado com sucesso.');
+            req.flash('success', 'Contato deletado com sucesso.');
             req.session.save(() => res.redirect(`/`));
             return;
     
